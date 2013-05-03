@@ -1,0 +1,1 @@
+project_name = ARGV[0].to_s
