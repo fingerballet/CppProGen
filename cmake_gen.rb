@@ -1,5 +1,8 @@
 project_name = ARGV[0].to_s
-cmakelist_file_path = './project/CMakeLists.txt'
+project_path = ARGV[1].to_s
+cmakelist_file_path = project_path + '/project/CMakeLists.txt'
+
+puts "Generate the CMakeLists of project #{project_name} in #{project_path}"
 
 $> = File.new(cmakelist_file_path, "w+")
 
@@ -30,7 +33,7 @@ include_directories(
 	"../test/tools/include"
 )
 
-link_directories("#{Dir.pwd}/test/tools/lib")
+link_directories("#{project_path + '/test/tools/lib'}")
 
 file(GLOB_RECURSE code_headers ../include/*.h)
 file(GLOB_RECURSE test_headers ../test/include/*.h)

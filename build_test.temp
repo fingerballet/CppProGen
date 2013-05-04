@@ -1,0 +1,16 @@
+require "fileutils"
+
+FileUtils.rm_rf 'build' if File.directory? 'build'
+Dir.mkdir 'build'
+Dir.chdir 'build'
+
+system 'cmake ..'
+system 'cmake --build .'
+
+if File.exist? '<%= project_name%>' then
+  system 'chmod 777, <%= project_name%>'
+  system './<%= project_name%>'
+else
+  puts "Failure!"
+  -1
+end
