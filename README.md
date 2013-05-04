@@ -18,6 +18,8 @@ Usage:
 ruby pro_gen.rb project_name project_path
 
 parameters:
-project_name:  the name of cpp project
-project_path:  the path of the project, should be a existing path
+
+project_name:  the name of cpp project；
+
+project_path:  the path of the project, should be a existing path；
 
